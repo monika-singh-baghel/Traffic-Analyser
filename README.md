@@ -1,11 +1,11 @@
 # 🌐 Web Traffic Trend Analyzer
 
-A Python-based web traffic analysis project that processes website visitor data, handles missing values using linear interpolation, analyzes traffic trends using a moving average, visualizes the results, and provides simple future traffic estimation through an interactive Streamlit dashboard.
+A Python-based web traffic analysis project that processes website visitor data, handles missing values using **linear interpolation**, analyzes traffic trends using a **3-day moving average**, visualizes the results, and provides simple future traffic estimation through an interactive **Streamlit dashboard**.
 
 ## 🔗 Project Links
 
-* 🌐 **Live Application:** Web Traffic Trend Analyzer
-* 💻 **GitHub Repository:** Traffic-Analyser
+* 🌐 **Live Application:** [Web Traffic Trend Analyzer](https://monika-singh-baghel-traffic-analyser-app-6chc6n.streamlit.app/)
+* 💻 **GitHub Repository:** [Traffic-Analyser](https://github.com/monika-singh-baghel/Traffic-Analyser)
 
 ## 🎯 Objectives
 
@@ -54,13 +54,15 @@ Day 3 → Missing
 Day 4 → 200 visitors
 ```
 
-The missing value is estimated using the values surrounding it before further traffic analysis is performed.
+The missing value is estimated based on the relationship between the surrounding known values.
+
+After interpolation, the completed data can be used for further trend analysis.
 
 ## 📈 Trend Analysis
 
 The project uses a **3-day moving average** to identify the overall traffic trend.
 
-A moving average smooths short-term fluctuations in the data and makes the general traffic pattern easier to understand.
+A moving average smooths short-term fluctuations and makes the general traffic pattern easier to understand.
 
 The dashboard displays:
 
@@ -71,7 +73,7 @@ The dashboard displays:
 
 The project provides a simple estimation of future website traffic.
 
-The current implementation uses the latest traffic value and generates estimated visitor values for the next 5 days.
+The current implementation uses the latest traffic value and generates estimated visitor values for the next **5 days**.
 
 > **Note:** This is a simple estimation method and is not a machine-learning forecasting model.
 
@@ -100,27 +102,45 @@ Missing values in the `Visitors` column are handled using linear interpolation.
 
 ## 🏗️ System Architecture & Workflow
 
-The following architecture diagram shows the complete flow of the Web Traffic Trend Analyzer, from CSV data input through preprocessing, missing-data handling, trend analysis, future estimation, and the Streamlit dashboard.
+The following diagram represents the complete system architecture of the Web Traffic Trend Analyzer, from CSV input and data preprocessing to trend analysis, visualization, and future traffic estimation.
 
 ![Web Traffic Trend Analyzer - System Architecture](images/system-architecture.png)
 
+### Main Processing Flow
+
+```text
+Traffic Data
+     ↓
+Data Preprocessing
+     ↓
+Missing Data Handling
+     ↓
+Trend Analysis & Future Estimation
+     ↓
+Streamlit Dashboard
+```
+
 ## 📊 Application Output
 
-The application provides:
+The application provides four main outputs:
 
-### 1. Raw Data
+### 1. 📂 Raw Data
 
-Displays the original data uploaded through the CSV file.
+Displays the original data uploaded by the user through the CSV file.
 
-### 2. Processed Data
+### 2. 🧹 Processed Data
 
-Displays the cleaned data after preprocessing and linear interpolation.
+Displays the cleaned data after preprocessing and missing-value interpolation.
 
-### 3. Traffic Graph
+### 3. 📈 Traffic Graph
 
-Shows actual website traffic along with the 3-day moving-average trend.
+Shows:
 
-### 4. Future Prediction
+* Actual visitor traffic
+* 3-day moving average
+* Overall traffic trend
+
+### 4. 🔮 Future Prediction
 
 Displays estimated website traffic for the next 5 days.
 
