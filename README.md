@@ -4,8 +4,8 @@ A Python-based web traffic analysis project that processes website visitor data,
 
 ## 🔗 Project Links
 
-* 🌐 **Live Application:** [Web Traffic Trend Analyzer](https://monika-singh-baghel-traffic-analyser-app-6chc6n.streamlit.app/)
-* 💻 **GitHub Repository:** [Traffic-Analyser](https://github.com/monika-singh-baghel/Traffic-Analyser)
+* 🌐 **Live Application:** Web Traffic Trend Analyzer
+* 💻 **GitHub Repository:** Traffic-Analyser
 
 ## 🎯 Objectives
 
@@ -21,9 +21,9 @@ A Python-based web traffic analysis project that processes website visitor data,
 
 * 📂 CSV file upload
 * 🧹 Data preprocessing
-* 🔎 Missing value detection
+* 🔎 Missing value handling
 * 📐 Linear interpolation
-* 📈 Moving average calculation
+* 📈 3-day moving average
 * 📊 Traffic visualization
 * 🔮 Future traffic estimation
 * 🌐 Interactive Streamlit dashboard
@@ -45,8 +45,6 @@ A Python-based web traffic analysis project that processes website visitor data,
 
 Linear interpolation is used to estimate missing visitor values between known data points.
 
-If a visitor value is missing between two known values, the project estimates the missing value based on the linear relationship between the surrounding known values.
-
 For example:
 
 ```text
@@ -56,7 +54,7 @@ Day 3 → Missing
 Day 4 → 200 visitors
 ```
 
-The missing value is estimated using linear interpolation before performing further analysis.
+The missing value is estimated using the values surrounding it before further traffic analysis is performed.
 
 ## 📈 Trend Analysis
 
@@ -100,31 +98,31 @@ Date,Visitors
 
 Missing values in the `Visitors` column are handled using linear interpolation.
 
-## 🔄 Project Workflow
+## 🏗️ System Architecture & Workflow
 
-```mermaid
-flowchart LR
-    A["📂 Traffic CSV"] --> B["📥 Data Loading"]
-    B --> C["🧹 Preprocessing"]
-    C --> D["📅 Date Conversion"]
-    D --> E["🔎 Missing Data Detection"]
-    E --> F["📐 Linear Interpolation"]
-    F --> G["📊 Clean Traffic Data"]
-    G --> H["📈 Moving Average"]
-    H --> I["📉 Trend Identification"]
-    I --> J["📊 Visualization"]
-    J --> K["🔮 Future Estimation"]
-    K --> L["🌐 Streamlit Dashboard"]
-```
+The following architecture diagram shows the complete flow of the Web Traffic Trend Analyzer, from CSV data input through preprocessing, missing-data handling, trend analysis, future estimation, and the Streamlit dashboard.
+
+![Web Traffic Trend Analyzer - System Architecture](images/system-architecture.png)
 
 ## 📊 Application Output
 
 The application provides:
 
-1. **Raw Data** – Displays the uploaded CSV data.
-2. **Processed Data** – Displays the cleaned data after preprocessing and interpolation.
-3. **Traffic Graph** – Shows actual visitor traffic and the moving-average trend.
-4. **Future Prediction** – Shows estimated traffic for the next 5 days.
+### 1. Raw Data
+
+Displays the original data uploaded through the CSV file.
+
+### 2. Processed Data
+
+Displays the cleaned data after preprocessing and linear interpolation.
+
+### 3. Traffic Graph
+
+Shows actual website traffic along with the 3-day moving-average trend.
+
+### 4. Future Prediction
+
+Displays estimated website traffic for the next 5 days.
 
 ## 📸 Project Screenshots
 
@@ -156,7 +154,8 @@ Traffic-Analyser/
 │   ├── dashboard.png
 │   ├── raw-data.png
 │   ├── processed-data.png
-│   └── graph-future.png
+│   ├── graph-future.png
+│   └── system-architecture.png
 │
 ├── 📁 src/
 │   ├── __init__.py
@@ -206,7 +205,7 @@ The application will open in your web browser.
 4. View the uploaded raw data.
 5. The application preprocesses the data.
 6. Missing visitor values are filled using linear interpolation.
-7. The moving average is calculated.
+7. The 3-day moving average is calculated.
 8. The traffic graph displays actual traffic and the trend.
 9. Future traffic estimates for the next 5 days are displayed.
 
